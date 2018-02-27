@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>historyRouter</h3>
+    <ul>
+        <li><a data-href='/home' href="#">home</a></li>
+        <li><a data-href='/about' href="#">about</a></li>
+        <li><a data-href='/page' href="#">page</a></li>
+    </ul>
+    <div id="view"></div>
+    <script src="./historyRouter.js"></script>
+    <script>
+        const route = new Router();
+        const view = document.querySelector('#view');
+        route.init();
+        route.router('/home', () => {
+            console.log('home');
+            view.innerHTML = 'home';
+        });
+        route.router('/about', () => {
+            view.innerHTML = 'about';
+        });
+        route.router('/page', () => {
+            view.innerHTML = 'page';
+        });
+    </script>
+</body>
+</html>

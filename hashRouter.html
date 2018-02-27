@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#/home">home</a></li>
+        <li><a href="#/about">about</a></li>
+        <li><a href="#/curl">curl</a></li>
+    </ul>
+    <div id="view">默认视图</div>
+    <script src="./hashRouter.js"></script>
+    <script>
+        const router = new Router();
+        const view = document.querySelector('#view');
+        router.init();
+        router.route('/home', () => {
+            view.innerHTML = 'home';
+        });
+
+        router.route('/about', () => {
+            view.innerHTML = 'about';
+        });
+
+        router.route('/curl', () => {
+            view.innerHTML = 'curl';
+        });
+    </script>
+</body>
+</html>
